@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: black;
+        }
+
+        .intro-video {
+            width: 60%;
+            max-width: 800px;
+
+            display: block;
+        }
+
+        .enter {
+            position: absolute;
+
+            bottom: 50px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .enter:hover {
+            opacity: 0.5;
+        }
+
+        .music {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio class="music" controls autoplay loop>
+        <source src="music/beach.mp3" type="audio/mpeg">
+    </audio>
+
+    <video class="intro-video" autoplay loop muted playsinline>
+        <source src="videos/grass.mp4" type="video/mp4">
+    </video>
+
+    <a class="enter" href="intro.html" target="_blank">
+        touch grass
+    </a>
+
+</body>
+
+</html>

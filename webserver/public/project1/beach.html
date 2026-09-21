@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beach</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background-image: url("images/beach.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .row {
+            display: grid;
+        }
+
+        .row1 {
+            grid-template-columns: 10% 5% 15% 20% 30% 20%;
+            height: 15vh;
+        }
+
+        .row2 {
+            grid-template-columns: 20% 10% 15% 25% 30%;
+            height: 20vh;
+        }
+
+        .row3 {
+            grid-template-columns: 5% 20% 1px 25% 5% 15% 5% 25% 5%;
+            height: 40vh;
+        }
+
+        .row4 {
+            grid-template-columns: 10% 20% 20% 10% 20% 20%;
+            height: 25vh;
+        }
+
+        .cover {
+            background: white;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            padding: 10px;
+
+            transition: opacity 1s;
+        }
+
+        .empty {
+            background: transparent;
+        }
+
+        .cover:hover {
+            opacity: 0;
+        }
+
+        .nested-cover {
+            display: grid;
+            grid-template-rows: 30% 70%;
+        }
+
+        .nested-cover-1 {
+            display: grid;
+            grid-template-rows: 10% 80% 10%;
+        }
+
+        .nested-cover-2 {
+            display: grid;
+            grid-template-rows: 50% 50%;
+        }
+
+        .nested-cover-gap {
+            display: grid;
+            grid-template-rows: 1px 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row row1">
+
+        <div class="cover"> </div>
+
+        <div class="empty"></div>
+
+        <div class="cover">
+            is
+        </div>
+
+        <div class="nested-cover-2">
+
+            <div class="empty"></div>
+
+            <div class="cover"></div>
+
+        </div>
+
+        <div class="cover">
+            no mystery,
+        </div>
+
+        <div class="cover"></div>
+
+    </div>
+
+
+    <div class="row row2">
+
+        <div class="cover"> </div>
+
+        <div class="empty"></div>
+
+        <div class="nested-cover">
+
+            <div class="cover"></div>
+
+            <div class="cover"></div>
+
+        </div>
+
+        <div class="nested-cover-gap">
+
+            <div class="empty"></div>
+
+            <div class="cover"></div>
+
+        </div>
+
+        <div class="nested-cover">
+
+            <div class="empty"></div>
+
+            <div class="cover">
+                there is something
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row row3">
+
+        <div class="empty"></div>
+
+        <div class="nested-cover-1">
+
+            <div class="cover"></div>
+
+            <div class="cover"></div>
+
+            <div class="cover"></div>
+
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="nested-cover">
+
+            <div class="cover"></div>
+
+            <div class="cover">
+                only see
+            </div>
+
+        </div>
+
+        <div class="cover"></div>
+
+        <div class="cover"></div>
+
+        <div class="cover"></div>
+
+        <div class="empty"></div>
+
+        <div class="cover"></div>
+
+    </div>
+
+
+    <div class="row row4">
+
+        <div class="cover">fold me</div>
+
+        <div class="nested-cover-1">
+            <div class="empty"></div>
+
+            <div class="cover"></div>
+
+            <div class="empty"></div>
+        </div>
+
+        <div class="cover">
+            expect
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="cover">
+            to see
+        </div>
+
+        <div class="nested-cover-gap">
+
+            <div class="empty"></div>
+
+            <div class="cover"> </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
