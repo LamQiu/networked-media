@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wind</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-image: url("images/beach.gif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .row {
+            display: grid;
+        }
+
+        .row1 {
+            grid-template-columns: 5fr 7fr 4fr 9fr 6fr 11fr 5fr 8fr 7fr 13fr 5fr 9fr 4fr 7fr;
+            height: 8vh;
+        }
+
+        .row2 {
+            grid-template-columns: 8fr 5fr 7fr 4fr 11fr 6fr 9fr 5fr 12fr 4fr 8fr 6fr 15fr;
+            height: 9vh;
+        }
+
+        .row3 {
+            grid-template-columns: 4fr 8fr 5fr 7fr 10fr 4fr 9fr 6fr 12fr 5fr 8fr 4fr 10fr;
+            height: 7vh;
+        }
+
+        .row4 {
+            grid-template-columns: 7fr 5fr 9fr 4fr 8fr 6fr 12fr 5fr 7fr 10fr 4fr 9fr 6fr;
+            height: 10vh;
+        }
+
+        .row5 {
+            grid-template-columns: 5fr 9fr 4fr 8fr 6fr 11fr 5fr 7fr 10fr 4fr 8fr 6fr 12fr;
+            height: 8vh;
+        }
+
+        .row6 {
+            grid-template-columns: 9fr 4fr 7fr 6fr 11fr 5fr 8fr 4fr 13fr 6fr 9fr 5fr 8fr;
+            height: 9vh;
+        }
+
+        .row7 {
+            grid-template-columns: 4fr 7fr 6fr 10fr 5fr 8fr 4fr 12fr 6fr 9fr 5fr 7fr 8fr;
+            height: 7vh;
+        }
+
+        .row8 {
+            grid-template-columns: 8fr 5fr 9fr 4fr 7fr 6fr 11fr 5fr 8fr 4fr 10fr 6fr 7fr;
+            height: 9vh;
+        }
+
+        .row9 {
+            grid-template-columns: 5fr 8fr 4fr 10fr 6fr 7fr 5fr 12fr 4fr 9fr 6fr 8fr 5fr;
+            height: 8vh;
+        }
+
+        .row10 {
+            grid-template-columns: 7fr 4fr 8fr 5fr 11fr 6fr 9fr 4fr 7fr 12fr 5fr 8fr 6fr;
+            height: 9vh;
+        }
+
+        .row11 {
+            grid-template-columns: 4fr 9fr 5fr 7fr 11fr 4fr 8fr 6fr 10fr 5fr 7fr 4fr 9fr;
+            height: 8vh;
+        }
+
+        .row12 {
+            grid-template-columns: 6fr 5fr 10fr 4fr 8fr 7fr 5fr 11fr 4fr 9fr 6fr 8fr 5fr;
+            height: 8vh;
+        }
+
+        .cover {
+            background: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px;
+            transition: opacity 0.8s ease 0.5s;
+        }
+
+        .nested {
+            display: grid;
+        }
+
+        .nested-vertical {
+            grid-template-columns: 40% 60%;
+        }
+
+        .nested-horizontal {
+            grid-template-rows: 40% 60%;
+        }
+
+        .nested-three {
+            grid-template-rows: 20% 55% 25%;
+        }
+
+        .nested-four {
+            display: grid;
+            grid-template-columns: 35% 15% 50%;
+            grid-template-rows: 30% 70%;
+        }
+
+        .nested-gap {
+            display: grid;
+            grid-template-rows: 1px 1fr;
+        }
+
+        .cover:hover {
+            animation: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .next {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 70%;
+
+            color: black;
+            text-decoration: none;
+            text-align: left;
+            font-size: 24px;
+
+            z-index: 1000;
+        }
+
+        .beach-link {
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .beach-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="next">
+        Find a piece of <a href="beach.html" target="_blank">the beach.</a><br>
+        Put it back.
+    </div>
+
+    <div class="row row1">
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row2">
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row3">
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="nested nested-horizontal">
+                <div class="cover"></div>
+                <div class="cover"></div>
+            </div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row4">
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="nested nested-vertical">
+                <div class="cover"></div>
+                <div class="cover"></div>
+            </div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+    </div>
+
+    <div class="row row5">
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="nested nested-vertical">
+                <div class="cover"></div>
+                <div class="cover"></div>
+            </div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row6">
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row7">
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row8">
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row9">
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row10">
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="nested nested-horizontal">
+                <div class="cover"></div>
+                <div class="cover"></div>
+            </div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+    </div>
+
+    <div class="row row11">
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="row row12">
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-horizontal">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-four">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-three">
+            <div class="cover"></div>
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="nested nested-vertical">
+            <div class="cover"></div>
+            <div class="cover"></div>
+        </div>
+        <div class="cover"></div>
+    </div>
+
+</body>
+
+</html>

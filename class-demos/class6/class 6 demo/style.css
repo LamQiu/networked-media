@@ -1,0 +1,23 @@
+/* Q: What is p when defining a rule in CSS? */
+/* A: p is a class that defines style of any html elements that is this class
+      selector, this is where to have styles to apply*/
+
+p {
+  /* Q: What is the property that manipulates the horizontal size of the block? Write that property and give it a value of 60%*/
+
+  /* Q: What are the other units of measurement we use in CSS? */
+  /* A: width: 60%
+     A: px */
+}
+
+/* To be completed as a class together: */
+/* Select "blue" class */
+.blue {
+  background-color: blue
+}
+
+/* Select "main" id */
+
+#main {
+  border: 2px solid red
+}

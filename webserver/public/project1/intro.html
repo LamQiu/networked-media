@@ -22,8 +22,28 @@
         .container {
             position: relative;
 
-            width: 60%;
-            max-width: 800px;
+            width: 100%;
+        }
+
+        .score {
+            width: 100%;
+        }
+
+        .line {
+            margin-bottom: 12px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .far-right {
+            text-align: right;
+            margin-right: 5%;
         }
 
         .intro {
@@ -47,7 +67,12 @@
             text-align: left;
         }
 
-        .enter:hover {
+        .wind-link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .wind-link:hover {
             opacity: 0.8;
         }
     </style>
@@ -57,10 +82,16 @@
 
     <div class="container">
 
-        <a class="enter" href="beach.html" target="_blank">
-            <strong>Fluxus Scores</strong> are short, open-ended instructions that turn simple actions into
-            experimental performances. They encourage people to interpret and perform the same score in their own ways.
-        </a>
+        <div class="enter">
+            <div class="score">
+                Look for the <a href="wind.html" target="_blank" class="wind-link">wind</a><br>
+                <div class="line right">Watch it.</div>
+                <div class="line left">Listen to it.</div>
+                <div class="line right">Give it a color.</div>
+                <div class="line left">Write it down.</div>
+                <div class="line far-right">Invite its quartet to your wedding.</div>
+            </div>
+        </div>
 
     </div>
 
