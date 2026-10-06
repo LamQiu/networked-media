@@ -1,13 +1,73 @@
-/* Q: What is p when defining a rule in CSS? */
-/* A: */
-p {
-  /* Q: What is the property that manipulates the horizontal size of the block? Write that property and give it a value of 60%*/
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 
-  /* Q: What are the other units of measurement we use in CSS? */
-  /* A: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  overflow: hidden;
 }
 
-/* To be completed as a class together: */
-/* Select "blue" class */
+.circle {
+  width: 200px;
+  height: 200px;
 
-/* Select "main" id */
+  border-radius: 50%;
+  background: white;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 2;
+}
+
+.circle:hover {
+  background-color: cyan;
+}
+
+.circle:active {
+  background-color: magenta;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background: white;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  /* left/top mark the ball's center, not its top-left corner */
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+canvas {
+  display: block;
+  height: 100vh;
+
+  pointer-events: none;
+}
+
+#live {
+  width: 20vw;
+}
+
+#divider {
+  width: 10vw;
+}
+
+#canvas {
+  width: 70vw;
+}
