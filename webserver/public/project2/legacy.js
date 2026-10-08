@@ -96,7 +96,6 @@ function moveBall(ball, {
         x = cx + nx * (R + r);
         y = cy + ny * (R + r);
 
-        // Only bounce while moving toward the circle, so one hit fires onCollide exactly once.
         const dot = vx * nx + vy * ny;
         if (dot < 0) {
             vx -= 2 * dot * nx;
@@ -195,10 +194,7 @@ function drawVideoCover(ctx, video, {
     ctx.restore();
 }
 
-// Snapshots the slice that will sit at screen position (x, y) into sliceCtx (a canvas exactly one slice in size),
-// so its content is fixed up front and can be revealed gradually.
-// "scan" copies the camera pixels that sit at the same x; "center" always copies the middle column.
-// With probability stretchThreshold, the slice is replaced by its leftmost pixel column repeated across its width.
+
 function captureSlice(sliceCtx, video, x, y, screenWidth, screenHeight, { source = "scan", stretchThreshold = 0 } = {}) {
     const width = sliceCtx.canvas.width;
     const h = sliceCtx.canvas.height;

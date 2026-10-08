@@ -71,3 +71,17 @@ canvas {
 #canvas {
   width: 70vw;
 }
+
+/* Only used as a source for drawImage, so it sits full-screen behind the canvases.
+   It must stay "visible" (no display:none, opacity:0 or tiny size): Safari and Chrome
+   refuse to autoplay, or pause, muted videos they consider invisible. */
+#smash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
