@@ -1,0 +1,12 @@
+<!-- to access this .html page
+directly access the file in the URL
+http://127.0.0.1:8080/form.html -->
+
+<!-- forms have 2 attributes
+action: route we are going to hit on the server side
+method: HTTP method we use (GET / POST) -->
+<form action="/form-upload" method="POST">
+    <input type="text" placeholder="write some text" name="new-text" />
+    <!-- forms have one required item: submit button -->
+    <input type="submit" value="text in button" />
+</form>
