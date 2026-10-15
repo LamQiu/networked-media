@@ -33,7 +33,7 @@ app.get('/first-server', (request, response) => {
 // to start our server: node server.js in terminal
 app.listen(8080, () => {
     console.log('started (or restarted) the server')
-    console.log('http://127.0.0.1:8080/')
+    console.log('http://localhost:8080/')
 })
 
 // POST looks exactly the same and will handle the form data
