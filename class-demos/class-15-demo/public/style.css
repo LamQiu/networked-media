@@ -1,0 +1,10 @@
+nav {
+    background-color: fuchsia;
+}
+
+/* multi-select two elements with the same rule */
+/* :visited is for a tags that have already been clicked */
+a,
+a:visited {
+    color: white;
+}
