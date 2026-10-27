@@ -1,0 +1,173 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #000;
+  color: #111;
+}
+
+.calendar-stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: calc(24px + var(--manifesto-w, 20vw));
+  bottom: calc(24px + var(--manifesto-h, 12vh));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: max-content;
+}
+
+.calendar-title {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 72px);
+  width: max-content;
+  gap: 16px;
+}
+
+.day {
+  position: relative;
+  z-index: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #111;
+  cursor: pointer;
+}
+
+.day::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: -1;
+}
+
+.day:hover {
+  color: #fff;
+}
+
+.day:hover::before {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+#upload-form {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.manifesto-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  color: #111;
+  font-family: sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.file-dots {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.file-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9a9a9a;
+}
+
+.day:hover .file-dots {
+  display: none;
+}
+
+.step-path {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.step-stone {
+  position: absolute;
+  box-sizing: border-box;
+  background: #fff;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.bottom-step-row {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  display: flex;
+  pointer-events: none;
+}
+
+.bottom-step-row .step-stone-row {
+  position: relative;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  flex: 1;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.upload-step-column {
+  position: absolute;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.upload-step-column .step-stone-column {
+  position: relative;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  flex: 1;
+  width: 100%;
+  pointer-events: auto;
+}

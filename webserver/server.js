@@ -1,19 +1,39 @@
-// Importing the express library we've installed; This library allows us to create a simple web server.
 let express = require('express');
+let http = require('http');
 
-// Create the web server.
 let app = express();
 
-// Tell the web server to use the "public" folder for serving static files (html, css, javascript, media.)
 app.use(express.static('public'));
 
-// Create a test endpoint; This is not required, but it allows us to verify whether the server is working.
 app.get('/test', function (req, res) {
   res.send('Hello World!')
 });
 
-// And finally start the server. We start the server on port 80, which is the default port for http.
-// If you want to learn more about ports, read this: https://www.cloudflare.com/learning/network-layer/what-is-a-computer-port/
+app.use('/project3', function (req, res) {
+  let options = {
+    hostname: '127.0.0.1',
+    port: 3003,
+    path: req.url,
+    method: req.method,
+    headers: Object.assign({}, req.headers, { host: '127.0.0.1:3003' })
+  };
+
+  let proxyReq = http.request(options, function (proxyRes) {
+    if (proxyRes.headers.location && proxyRes.headers.location.indexOf('/') === 0) {
+      proxyRes.headers.location = '/project3' + proxyRes.headers.location;
+    }
+    res.writeHead(proxyRes.statusCode, proxyRes.headers);
+    proxyRes.pipe(res);
+  });
+
+  proxyReq.on('error', function () {
+    res.statusCode = 502;
+    res.end('project3 offline');
+  });
+
+  req.pipe(proxyReq);
+});
+
 app.listen(80, function () {
   console.log('Example app listening on port 80!')
 });

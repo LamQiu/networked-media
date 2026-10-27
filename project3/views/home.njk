@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>October</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-month="oct">
+  <div class="calendar-stage">
+    <div class="calendar-wrap">
+      <div class="calendar-title">OCT.</div>
+      <div class="calendar">
+        {% for day in range(1, daysInMonth + 1) %}
+          <div class="day" data-day="{{ day }}">{{ day }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div id="step-path" class="step-path" aria-label="path to manifesto"></div>
+  <button type="button" id="manifesto-button" class="manifesto-button">manifesto</button>
+  <script id="files-by-day" type="application/json">{{ filesJson | safe }}</script>
+  <form id="upload-form" action="upload" method="post" enctype="multipart/form-data" hidden>
+    <input type="hidden" name="month" id="upload-month" value="oct">
+    <input type="hidden" name="day" id="upload-day" value="">
+    <input id="audio" type="file" name="audio" accept=".mp3,.wav,.m4a,audio/mpeg,audio/wav,audio/x-wav,audio/mp4,audio/x-m4a">
+  </form>
+  <script src="calendar.js"></script>
+</body>
+</html>
