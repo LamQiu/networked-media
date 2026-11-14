@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>class 20 demo</title>
+        {# optionally style the form #}
+        <link href = "style.css" rel = "stylesheet">
+    </head>
+    <body>
+        <section class = "left"></section>
+        <form method="POST" action="/add-data">
+            <input type="text" name="text" placeholder="add some text data" required>
+            {# if you want to add more fields, add them to the form #}
+            <input type="text" name = "username" placeholder = "add your name">
+            <input type="age" name = "age" placeholder= "Age">
+            <input type="url" name = "url" placeholder = "add some url">
+            <input type="submit" value="send data">
+        </form>
+        <section class = "right"></section>
+    </body>
+</html>

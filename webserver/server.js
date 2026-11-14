@@ -34,6 +34,31 @@ app.use('/project3', function (req, res) {
   req.pipe(proxyReq);
 });
 
+app.use('/project4', function (req, res) {
+  let options = {
+    hostname: '127.0.0.1',
+    port: 6003,
+    path: req.url,
+    method: req.method,
+    headers: Object.assign({}, req.headers, { host: '127.0.0.1:6003' })
+  };
+
+  let proxyReq = http.request(options, function (proxyRes) {
+    if (proxyRes.headers.location && proxyRes.headers.location.indexOf('/') === 0) {
+      proxyRes.headers.location = '/project4' + proxyRes.headers.location;
+    }
+    res.writeHead(proxyRes.statusCode, proxyRes.headers);
+    proxyRes.pipe(res);
+  });
+
+  proxyReq.on('error', function () {
+    res.statusCode = 502;
+    res.end('project4 offline');
+  });
+
+  req.pipe(proxyReq);
+});
+
 app.listen(80, function () {
   console.log('Example app listening on port 80!')
 });
