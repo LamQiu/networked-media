@@ -1,0 +1,39 @@
+/* next to each selector, write what each of the rules do based on the values they are assigned */
+
+body{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+body > section {
+    flex-grow: 1;
+}
+
+body > main {
+    flex-grow: 3;
+    background-color: lavender;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+body > main > nav {
+    height: 100px;
+    background-color: bisque;
+    position: relative;
+}
+
+body > main > nav > .links {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0px;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}

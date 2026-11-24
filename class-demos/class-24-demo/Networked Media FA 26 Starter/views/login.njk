@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}login{% endblock %}
+
+{% block content %}
+<div class="login-form">
+    <a href="/login">don't have an account?</a>
+    <form method="POST" action="/authenticate">
+        <input type="text" name="username" />
+        <input type="password" name="pass" />
+        <input type="submit" value="login" />
+    </form>
+</div>
+{% endblock %}
